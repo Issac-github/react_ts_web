@@ -1,7 +1,10 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
-import './index.css'
-import App from './App'
+import './assets/css/index.css'
+import 'antd/dist/antd.css'
+import { RouterProvider } from 'react-router-dom'
+import router from './router'
+import HomeMenu from './views/Home/HomeMenu'
 import reportWebVitals from './reportWebVitals'
 import { ChakraProvider } from '@chakra-ui/react'
 
@@ -9,7 +12,10 @@ const root = ReactDOM.createRoot(document.getElementById('root') as HTMLElement)
 root.render(
   <React.StrictMode>
     <ChakraProvider>
-      <App />
+      <div style={{ display: 'flex', width: '100%' }}>
+        <HomeMenu />
+        <RouterProvider router={router} />
+      </div>
     </ChakraProvider>
   </React.StrictMode>
 )
